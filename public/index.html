@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Vault</title>
+    <title>TornaNO</title>
     <base href="/">
 
     <!-- Bootstrap -->
@@ -19,8 +19,6 @@
   
   </head>
   <body ng-controller="appController">
-
-  	<h3>Hi Kids!</h3>
     
     <!-- navbar -->
     <nav class="navbar navbar-default navbar-static-top">
@@ -30,8 +28,65 @@
             <li ui-sref-active="active"><a class="navbar-brand" ui-sref='home'>TornaNO!</a></li>
           </ul>
         </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav">
+              <li ng-show="!isAuthenticated()"><a ui-sref='login'>Login</a></li>
+            </ul>
+            <li class="dropdown" ng-show="isAuthenticated()" class="ng-hide">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Name<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Account</a></li>
+                <li class="divider"></li>
+                <li><a ui-sref='logout'>Log out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
+
+    <div class="container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <div class="row">
+
+        <div class="col-xs-3 col-md-4">
+          <a href="#" class="thumbnail">
+            <img src="../images/placeholder.png">
+            <p class="text-center">Go Bag Builder</p>
+          </a>
+        </div>
+
+        <div class="col-xs-3 col-md-4">
+          <a href="#" class="thumbnail">
+            <img src="../images/placeholder.png">
+            <p class="text-center">Tornado Dress-Me-Up</p>
+          </a>
+        </div>
+
+        <div class="col-xs-3 col-md-4">
+          <a href="#" class="thumbnail">
+            <img src="../images/placeholder.png">
+            <p class="text-center">Shelter Finder</p>
+          </a>
+        </div>
+  
+        </div>
+
+
+    </div>
 
     <!-- footer -->
 
