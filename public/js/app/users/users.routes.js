@@ -3,7 +3,7 @@
   "use strict";
 
   angular
-    .module('vault.users')
+    .module('tornano.users')
     .config(UsersRoutes);
 
   UsersRoutes.$inject = [

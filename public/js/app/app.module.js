@@ -2,11 +2,10 @@
 (function() {
   "use strict";
 
-  angular.module('vault', [
+  angular.module('tornano', [
     'ngResource',
     'ui.router',
-    'vault.users',
-    'angularFileUpload'
+    'tornano.users'
   ]);
 
 })();

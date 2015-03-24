@@ -2,16 +2,16 @@
   "use strict";
 
   angular
-    .module('vault')
-    .config(VaultRoutes);
+    .module('tornano')
+    .config(TornanoRoutes);
 
-  VaultRoutes.$inject = [
+  TornanoRoutes.$inject = [
     '$stateProvider', 
     '$urlRouterProvider', 
-    '$locationProvider',
+    '$locationProvider'
   ];
 
-  function VaultRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
+  function TornanoRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $stateProvider
       .state('index', {
@@ -20,7 +20,7 @@
         templateUrl: 'partials/home.html',
         data: {
           isIndex:true,
-          requireLogin: true
+          requireLogin: false
         }
       })
       .state('home', {
@@ -28,15 +28,31 @@
         controller: 'homeController',
         templateUrl: 'partials/home.html',
         data : {
-          requireLogin: true
+          requireLogin: false
         }
       })
-      .state('home.documents', {
-        url: '/documents',
-        controller: 'documentsController',
-        templateUrl: 'partials/documents.html',
+      .state('GoBagBuilder', {
+        url: '/GoBagBuilder',
+        controller: 'builderController',
+        templateUrl: 'partials/builder.html',
         data: {
-          requireLogin: true
+          requireLogin: false
+        }
+      })
+      .state('DressUpGame', {
+        url: '/DressUpGame',
+        controller: 'dressController',
+        templateUrl: 'partials/dress.html',
+        data: {
+          requireLogin: false
+        }
+      })
+      .state('ShelterFinder', {
+        url: '/ShelterFinder',
+        controller: 'shelterController',
+        templateUrl: 'partials/shelter.html',
+        data: {
+          requireLogin: false
         }
       });
 

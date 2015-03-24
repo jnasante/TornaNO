@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('vault.users')
+		.module('tornano.users')
 		.constant('AuthEvents', {
 			loginSuccess: 'auth-login-success',
 			loginFailed: 'auth-login-failed',

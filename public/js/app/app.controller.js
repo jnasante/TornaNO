@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('vault')
+		.module('tornano')
 		.controller('appController', appController);
 
 	appController.$inject = [
@@ -33,10 +33,10 @@
 
 				if (isIndex) $window.location.href = '/home';
 
-				if (requireLogin && !$scope.isAuthenticated()) {
-					event.preventDefault();
-					$window.location.href = '/login';
-				}
+				// if (requireLogin && !$scope.isAuthenticated()) {
+				// 	event.preventDefault();
+				// 	$window.location.href = '/login';
+				// }
 			});
 		})();
 

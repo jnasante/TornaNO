@@ -2,7 +2,7 @@
 (function() {
   "use strict";
 
-  angular.module('vault.users', [
+  angular.module('tornano.users', [
     'ui.router'
   ]);
 
