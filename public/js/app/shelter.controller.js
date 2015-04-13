@@ -10,6 +10,6 @@
   function ShelterController($scope, $rootScope, $http) {
 
     
-  };
+  }
 
 })();

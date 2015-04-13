@@ -10,6 +10,6 @@
   function DressController($scope, $rootScope, $http) {
 
     
-  };
+  }
 
 })();

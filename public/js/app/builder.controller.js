@@ -10,6 +10,6 @@
   function BuilderController($scope, $rootScope, $http) {
 
     
-  };
+  }
 
 })();

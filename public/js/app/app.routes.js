@@ -54,6 +54,14 @@
         data: {
           requireLogin: false
         }
+      })
+      .state('SlidingTiles', {
+        url: '/SlidingTiles',
+        controller: 'puzzleController',
+        templateUrl: 'partials/shelter.html',
+        data: {
+          requireLogin: false
+        }
       });
 
     $locationProvider.html5Mode(true);
