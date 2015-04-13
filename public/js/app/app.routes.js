@@ -6,8 +6,8 @@
     .config(TornanoRoutes);
 
   TornanoRoutes.$inject = [
-    '$stateProvider', 
-    '$urlRouterProvider', 
+    '$stateProvider',
+    '$urlRouterProvider',
     '$locationProvider'
   ];
 
@@ -58,7 +58,7 @@
       .state('SlidingTiles', {
         url: '/SlidingTiles',
         controller: 'puzzleController',
-        templateUrl: 'partials/shelter.html',
+        templateUrl: 'partials/puzzle.html',
         data: {
           requireLogin: false
         }
