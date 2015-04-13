@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('vault.users')
+		.module('tornano.users')
 		.factory('Auth', auth);
 
 	auth.$inject = [
