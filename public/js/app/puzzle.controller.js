@@ -5,7 +5,7 @@
     .module('tornano')
     .controller('puzzleController', PuzzleController);
 
-  ShelterController.$inject = ['$scope', '$rootScope', '$http'];
+  PuzzleController.$inject = ['$scope', '$rootScope', '$http'];
 
   function PuzzleController($scope, $rootScope, $http) {
 
