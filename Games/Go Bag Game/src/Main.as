@@ -1,4 +1,4 @@
-package 
+﻿package 
 {
 	import flash.display.Bitmap;
 	import flash.display.Graphics;
@@ -12,114 +12,108 @@ package
 	
 	public class Main extends Sprite 
 	{
-		var itemName = "candy";
-		var description = "Candy is a yummy treat, but it is not good for nutrition or sustained energy in a crisis.";
-		itemName = "whistle";
-		description = "Whistles produce a loud noise so that people can find you, even if you are trapped under rubble.";
-		itemName = "canned food";
-		description = "Canned food lasts for a long time and can be opened with a multitool.";
-		itemName = "bike";
-		description = "A bike is a means of transportation. However, it can only be used by one person and it may not be practical after a tornado.";
-		itemName = "fireworks";
-		description = "Fireworks are explosive and may start dangerous fires.";
-		itemName = "basketball";
-		description = "Basketballs are a source of outdoors entertainment.";
-		itemName = "flashlight";
-		description = "Flashlights illuminate dark areas, helping you find people and things.";
-		itemName = "radio";
-		description = "A battery-powered radio lets you listen to emergency broadcasts and weather reports even when the power is out.";
-		itemName = "waterbottle";
-		description = "Waterbottles are a source of clean, drinkable water to help you stay hydrated.";
-		itemName = "wrench";
-		description = "A wrench can be used to turn off the utilities of a house during a tornado.";
-		itemName = "game system";
-		description = "Game systems are a source of entertainment, but require batteries that might be used for radios and flashlights.";
-		itemName = "doll";
-		description = "A small toy figurine.";
-		itemName = "cash";
-		description = "Cash can be used to buy supplies or necessary items.";
-		itemName = "map";
-		description = "Maps of the local area help you find your way.";
-		itemName = "first aid kit";
-		description = "First Aid Kits contain supplies to help handle injuries, like cuts.";
-		itemName = "multitool";
-		description = "A multitool can be used as a knife, a can opener, scissors, and more.";
-		itemName = "teddy bear";
-		description = "A soft toy bear.";
-		itemName = "mp3 player";
-		description = "MP3 players allow you to listen to music.";
-		itemName = "boots";
-		description = "Boots are sturdy footwear that protect your feet from sharp objects on the ground.";
-		itemName = "hard hat";
-		description = "A hard hat protects your head from debris.";
 		
 		[Embed(source="../assets/11949863251401131855candy_31.svg.med.png")]
 		private var layer0Class:Class;
 		var layer0:Bitmap = new layer0Class() as Bitmap;
-		var item0 = new GoBagItem("candy","lollipop",true,layer0);
+		var item0 = new GoBagItem("candy","Candy is a yummy treat, but it is not good for nutrition or sustained energy in a crisis.",true,layer0);
 		
 		
 		[Embed(source="../assets/11971038831932190305kelan_whistle.svg.med.png")]
 		private var layer1Class:Class;
 		var layer1:Bitmap = new layer1Class() as Bitmap;
-		var item1 = new GoBagItem("candy","lollipop",true,layer1);
+		var item1 = new GoBagItem("whistle","Whistles produce a loud noise so that people can find you, even if you are trapped under rubble.",true,layer1);
 
 		[Embed(source="../assets/basketball.png")]
 		private var layer2Class:Class;
 		var layer2:Bitmap = new layer2Class() as Bitmap;
-		var item2 = new GoBagItem("candy","lollipop",true,layer2);
+		var item2 = new GoBagItem("basketball","Basketballs are a source of outdoors entertainment.",true,layer2);
 
 		[Embed(source="../assets/bike.png")]
 		private var layer3Class:Class;
 		var layer3:Bitmap = new layer3Class() as Bitmap;
-		var item3 = new GoBagItem("candy","lollipop",true,layer3);
+		var item3 = new GoBagItem("bike","A bike is a means of transportation. However, it can only be used by one person and it may not be practical after a tornado.",true,layer3);
 		
 		
 		[Embed(source="../assets/canned-goods-md.png")]
 		private var layer4Class:Class;
 		var layer4:Bitmap = new layer4Class() as Bitmap;
-		var item4 = new GoBagItem("candy","lollipop",true,layer4);
+		var item4 = new GoBagItem("canned food","Canned food lasts for a long time and can be opened with a multitool.",true,layer4);
 		
-		[Embed(source="../assets/car.png")]
+		[Embed(source="../assets/boots.png")]
 		private var layer5Class:Class;
 		var layer5:Bitmap = new layer5Class() as Bitmap;
-		var item5 = new GoBagItem("candy","lollipop",true,layer5);
+		var item5 = new GoBagItem("boots","Boots are sturdy footwear that protect your feet from sharp objects on the ground.",true,layer5);
 		
 		[Embed(source="../assets/fireworks.png")]
 		private var layer6Class:Class;
 		var layer6:Bitmap = new layer6Class() as Bitmap;
-		var item6 = new GoBagItem("candy","lollipop",true,layer6);
+		var item6 = new GoBagItem("fireworks","Fireworks are explosive and may start dangerous fires.",true,layer6);
 		
 		[Embed(source="../assets/flashlight.png")]
 		private var layer7Class:Class;
 		var layer7:Bitmap = new layer7Class() as Bitmap;
-		var item7 = new GoBagItem("candy","lollipop",true,layer7);
+		var item7 = new GoBagItem("flashlight","Flashlights illuminate dark areas, helping you find people and things.",true,layer7);
 		
-		[Embed(source="../assets/gobag.png")]
+		[Embed(source="../assets/cash.png")]
 		private var layer8Class:Class;
 		var layer8:Bitmap = new layer8Class() as Bitmap;
-		var item8 = new GoBagItem("candy","lollipop",true,layer8);
+		var item8 = new GoBagItem("cash","Cash can be used to buy supplies or necessary items.",true,layer8);
 		
 		[Embed(source="../assets/radio.png")]
 		private var layer9Class:Class;
 		var layer9:Bitmap = new layer9Class() as Bitmap;
-		var item9 = new GoBagItem("candy","lollipop",true,layer9);
+		var item9 = new GoBagItem("radio","A battery-powered radio lets you listen to emergency broadcasts and weather reports even when the power is out.",true,layer9);
 		
-		[Embed(source="../assets/tv.png")]
+		[Embed(source="../assets/doll.png")]
 		private var layer10Class:Class;
 		var layer10:Bitmap = new layer10Class() as Bitmap;
-		var item10 = new GoBagItem("candy","lollipop",true,layer10);
+		var item10 = new GoBagItem("doll","A small toy figurine.",true,layer10);
 		
 		[Embed(source="../assets/waterbottle.png")]
 		private var layer11Class:Class;
 		var layer11:Bitmap = new layer11Class() as Bitmap;
-		var item11 = new GoBagItem("candy","lollipop",true,layer11);
+		var item11 = new GoBagItem("waterbottle","Waterbottles are a source of clean, drinkable water to help you stay hydrated.",true,layer11);
 		
 		[Embed(source="../assets/wrench.png")]
 		private var layer12Class:Class;
 		var layer12:Bitmap = new layer12Class() as Bitmap;
-		var item12 = new GoBagItem("candy","lollipop",true,layer0);
+		var item12 = new GoBagItem("wrench","A wrench can be used to turn off the utilities of a house during a tornado.",true,layer0);
 
+		[Embed(source="../assets/firstaidkit.png")]
+		private var layer13Class:Class;
+		var layer13:Bitmap = new layer13Class() as Bitmap;
+		var item13 = new GoBagItem("first aid kit","First Aid Kits contain supplies to help handle injuries, like cuts.",true,layer13);
+		
+		[Embed(source="../assets/gamesystem.png")]
+		private var layer14Class:Class;
+		var layer14:Bitmap = new layer14Class() as Bitmap;
+		var item14 = new GoBagItem("game system","Game systems are a source of entertainment, but require batteries that might be used for radios and flashlights.",true,layer14);
+		
+		[Embed(source="../assets/hardhat.png")]
+		private var layer15Class:Class;
+		var layer15:Bitmap = new layer15Class() as Bitmap;
+		var item15 = new GoBagItem("hard hat","A hard hat protects your head from debris.",true,layer15);
+		
+		[Embed(source="../assets/map.png")]
+		private var layer16Class:Class;
+		var layer16:Bitmap = new layer16Class() as Bitmap;
+		var item16 = new GoBagItem("map","Maps of the local area help you find your way to safety.",true,layer16);
+			
+		[Embed(source="../assets/mp3.png")]
+		private var layer17Class:Class;
+		var layer17:Bitmap = new layer17Class() as Bitmap;
+		var item17 = new GoBagItem("mp3 player","MP3 players allow you to listen to music.",true,layer17);
+		
+		[Embed(source="../assets/multitool.png")]
+		private var layer18Class:Class;
+		var layer18:Bitmap = new layer18Class() as Bitmap;
+		var item18 = new GoBagItem("multitool","A multitool can be used as a knife, a can opener, scissors, and more.",true,layer18);
+		
+		[Embed(source="../assets/teddybear.png")]
+		private var layer18Class:Class;
+		var layer18:Bitmap = new layer18Class() as Bitmap;
+		var item18 = new GoBagItem("teddy bear","A soft toy bear.",true,layer18);
 		
 		private var items:Array = new Array(
 			item0,
@@ -134,7 +128,13 @@ package
 			item9,
 			item10,
 			item11,
-			item12
+			item12,
+			item13,
+			item14,
+			item15,
+			item16,
+			item17,
+			item18
 		);
 		
 		private var startPositionsX:Array = new Array(0, 50, 100, 150,200,250,300,350,400,450,500,550);
