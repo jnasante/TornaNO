@@ -9,6 +9,46 @@
 	
 	public class Main extends Sprite 
 	{
+		var itemName = "candy";
+		var description = "Candy is a yummy treat, but it is not good for nutrition or sustained energy in a crisis.";
+		itemName = "whistle";
+		description = "Whistles produce a loud noise so that people can find you, even if you are trapped under rubble.";
+		itemName = "canned food";
+		description = "Canned food lasts for a long time and can be opened with a multitool.";
+		itemName = "bike";
+		description = "A bike is a means of transportation. However, it can only be used by one person and it may not be practical after a tornado.";
+		itemName = "fireworks";
+		description = "Fireworks are explosive and may start dangerous fires.";
+		itemName = "basketball";
+		description = "Basketballs are a source of outdoors entertainment.";
+		itemName = "flashlight";
+		description = "Flashlights illuminate dark areas, helping you find people and things.";
+		itemName = "radio";
+		description = "A battery-powered radio lets you listen to emergency broadcasts and weather reports even when the power is out.";
+		itemName = "waterbottle";
+		description = "Waterbottles are a source of clean, drinkable water to help you stay hydrated.";
+		itemName = "wrench";
+		description = "A wrench can be used to turn off the utilities of a house during a tornado.";
+		itemName = "game system";
+		description = "Game systems are a source of entertainment, but require batteries that might be used for radios and flashlights.";
+		itemName = "doll";
+		description = "A small toy figurine.";
+		itemName = "cash";
+		description = "Cash can be used to buy supplies or necessary items.";
+		itemName = "map";
+		description = "Maps of the local area help you find your way.";
+		itemName = "first aid kit";
+		description = "First Aid Kits contain supplies to help handle injuries, like cuts.";
+		itemName = "multitool";
+		description = "A multitool can be used as a knife, a can opener, scissors, and more.";
+		itemName = "teddy bear";
+		description = "A soft toy bear.";
+		itemName = "mp3 player";
+		description = "MP3 players allow you to listen to music.";
+		itemName = "boots";
+		description = "Boots are sturdy footwear that protect your feet from sharp objects on the ground.";
+		itemName = "hard hat";
+		description = "A hard hat protects your head from debris.";
 		
 		[Embed(source="../assets/11949863251401131855candy_31.svg.med.png")]
 		private var layer0Class:Class;
