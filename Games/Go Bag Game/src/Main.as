@@ -8,6 +8,7 @@ package
 	
 	public class Main extends Sprite 
 	{
+		
 		[Embed(source="../assets/11949863251401131855candy_31.svg.med.png")]
 		private var layer0Class:Class;
 		var layer0:Bitmap = new layer0Class() as Bitmap;
@@ -102,8 +103,8 @@ package
 				layers[i].y = startPositionsY[i];
 			}
 			
-			stage.addEventListener(MouseEvent.MOUSE_DOWN, dragObject);
-			stage.addEventListener(MouseEvent.MOUSE_UP, stopDragObject);
+			layer0.addEventListener(MouseEvent.MOUSE_DOWN, dragObject);
+			layer0.addEventListener(MouseEvent.MOUSE_UP, stopDragObject);
 			
 			[SWF(width="1280", height="1000", backgroundColor="#000000", frameRate="30")]
 		}
