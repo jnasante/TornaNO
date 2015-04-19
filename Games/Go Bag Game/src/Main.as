@@ -67,11 +67,17 @@ package
 			new layer3Class(),
 			new layer4Class(),
 			new layer5Class(),
-			new layer6Class()
+			new layer6Class(),
+			new layer7Class(),
+			new layer8Class(),
+			new layer9Class(),
+			new layer10Class(),
+			new layer11Class(),
+			new layer12Class()
 		);
 		
-		private var startPositionsX:Array = new Array(0, 0, -160, -320);
-		private var startPositionsY:Array = new Array(0, 10, 20, 30);
+		private var startPositionsX:Array = new Array(0, 100, 200, 300,400,500,600,700,800,900,1000,1100);
+		private var startPositionsY:Array = new Array(0, 100, 200, 300,400,500,600,700,800,900,1000,1100);
 		
 		var xPos:int; 
 		var yPos:int; 
@@ -90,35 +96,27 @@ package
 			for (var i:int = 0; i < layers.length; i++ )
 			{
 				addChild(layers[i]);
-				layers[i].x = startPositionsX[i] + 50;
+				layers[i].x = startPositionsX[i];
 				layers[i].y = startPositionsY[i];
 			}
 			
-			stage.addEventListener(MouseEvent.MOUSE_MOVE, dragObject);
-			stage.addEventListener(MouseEvent.MOUSE_MOVE, stopDragObject);
+			stage.addEventListener(MouseEvent.MOUSE_DOWN, dragObject);
+			stage.addEventListener(MouseEvent.MOUSE_UP, stopDragObject);
 			
 			[SWF(width="1280", height="1000", backgroundColor="#000000", frameRate="30")]
 		}
 		
 		private function dragObject(e:MouseEvent):void
 		{
-			e.currentTarget.startDrag();
+			trace(e.currentTarget);
+			this.startDrag();
 		}
 		
 		private function stopDragObject(e:MouseEvent):void
 		{
-			if (e.target.hitTestObject(getChildByName(e.target.name + "Target")))
-			{
-				e.target.x = getChildByName(e.target.name + "Target").x;
-				e.target.y = getChildByName(e.target.name + "Target").y;
-			}
-			else
-			{
-				e.target.x = xPos;
-				e.target.y = yPos;
-			}
-
-			e.target.stopDrag();
+			
+			this.stopDrag();	
+			
 		}
 		
 		private function getPosition(target:Object):void
