@@ -44,19 +44,19 @@ package
 		var layer8:Bitmap = new layer8Class() as Bitmap;
 		
 		[Embed(source="../assests/radio.png")]
-		private var layer6Class:Class;
+		private var layer9Class:Class;
 		var layer9:Bitmap = new layer9Class() as Bitmap;
 		
 		[Embed(source="../assests/tv.png")]
-		private var layer6Class:Class;
+		private var layer10Class:Class;
 		var layer10:Bitmap = new layer10Class() as Bitmap;
 		
 		[Embed(source="../assests/waterbottle.png")]
-		private var layer6Class:Class;
+		private var layer11Class:Class;
 		var layer11:Bitmap = new layer11Class() as Bitmap;
 		
 		[Embed(source="../assests/wrench.png")]
-		private var layer6Class:Class;
+		private var layer12Class:Class;
 		var layer12:Bitmap = new layer12Class() as Bitmap;
 
 		
@@ -90,19 +90,19 @@ package
 			for (var i:int = 0; i < layers.length; i++ )
 			{
 				addChild(layers[i]);
-				layers[i].x = startPositionsX[i];
+				layers[i].x = startPositionsX[i] + 50;
 				layers[i].y = startPositionsY[i];
 			}
 			
 			stage.addEventListener(MouseEvent.MOUSE_MOVE, dragObject);
 			stage.addEventListener(MouseEvent.MOUSE_MOVE, stopDragObject);
+			
+			[SWF(width="1280", height="1000", backgroundColor="#000000", frameRate="30")]
 		}
 		
 		private function dragObject(e:MouseEvent):void
 		{
-			getPosition(e.target);
-
-			e.target.startDrag(true);
+			e.currentTarget.startDrag();
 		}
 		
 		private function stopDragObject(e:MouseEvent):void
