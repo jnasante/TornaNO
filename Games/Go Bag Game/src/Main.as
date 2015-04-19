@@ -5,57 +5,59 @@ package
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
+	
 	public class Main extends Sprite 
 	{
-		[Embed(source="../assests/11949863251401131855candy_31.svg.med.png")]
+		[Embed(source="../assets/11949863251401131855candy_31.svg.med.png")]
 		private var layer0Class:Class;
 		var layer0:Bitmap = new layer0Class() as Bitmap;
 		
-		[Embed(source="../assests/11971038831932190305kelan_whistle.svg.med.png")]
+		
+		[Embed(source="../assets/11971038831932190305kelan_whistle.svg.med.png")]
 		private var layer1Class:Class;
 		var layer1:Bitmap = new layer1Class()as Bitmap;
 
-		[Embed(source="../assests/basketball.png")]
+		[Embed(source="../assets/basketball.png")]
 		private var layer2Class:Class;
 		var layer2:Bitmap = new layer2Class()as Bitmap;
 
-		[Embed(source="../assests/bike.png")]
+		[Embed(source="../assets/bike.png")]
 		private var layer3Class:Class;
 		var layer3:Bitmap = new layer3Class() as Bitmap;
 		
-		[Embed(source="../assests/canned-goods-md.png")]
+		[Embed(source="../assets/canned-goods-md.png")]
 		private var layer4Class:Class;
 		var layer4:Bitmap = new layer4Class() as Bitmap;
 		
-		[Embed(source="../assests/car.png")]
+		[Embed(source="../assets/car.png")]
 		private var layer5Class:Class;
 		var layer5:Bitmap = new layer5Class() as Bitmap;
 		
-		[Embed(source="../assests/fireworks.png")]
+		[Embed(source="../assets/fireworks.png")]
 		private var layer6Class:Class;
 		var layer6:Bitmap = new layer6Class() as Bitmap;
 		
-		[Embed(source="../assests/flashlight.png")]
+		[Embed(source="../assets/flashlight.png")]
 		private var layer7Class:Class;
 		var layer7:Bitmap = new layer7Class() as Bitmap;
 		
-		[Embed(source="../assests/gobag.png")]
+		[Embed(source="../assets/gobag.png")]
 		private var layer8Class:Class;
 		var layer8:Bitmap = new layer8Class() as Bitmap;
 		
-		[Embed(source="../assests/radio.png")]
+		[Embed(source="../assets/radio.png")]
 		private var layer9Class:Class;
 		var layer9:Bitmap = new layer9Class() as Bitmap;
 		
-		[Embed(source="../assests/tv.png")]
+		[Embed(source="../assets/tv.png")]
 		private var layer10Class:Class;
 		var layer10:Bitmap = new layer10Class() as Bitmap;
 		
-		[Embed(source="../assests/waterbottle.png")]
+		[Embed(source="../assets/waterbottle.png")]
 		private var layer11Class:Class;
 		var layer11:Bitmap = new layer11Class() as Bitmap;
 		
-		[Embed(source="../assests/wrench.png")]
+		[Embed(source="../assets/wrench.png")]
 		private var layer12Class:Class;
 		var layer12:Bitmap = new layer12Class() as Bitmap;
 
