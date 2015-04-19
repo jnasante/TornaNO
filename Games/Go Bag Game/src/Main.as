@@ -6,57 +6,60 @@
 	import flash.events.MouseEvent;
 	import components.*;
 	
+	
 	public class Main extends Sprite 
 	{
-		[Embed(source="../assests/11949863251401131855candy_31.svg.med.png")]
+		
+		[Embed(source="../assets/11949863251401131855candy_31.svg.med.png")]
 		private var layer0Class:Class;
 		var layer0:Bitmap = new layer0Class() as Bitmap;
 		
-		[Embed(source="../assests/11971038831932190305kelan_whistle.svg.med.png")]
+		
+		[Embed(source="../assets/11971038831932190305kelan_whistle.svg.med.png")]
 		private var layer1Class:Class;
 		var layer1:Bitmap = new layer1Class()as Bitmap;
 
-		[Embed(source="../assests/basketball.png")]
+		[Embed(source="../assets/basketball.png")]
 		private var layer2Class:Class;
 		var layer2:Bitmap = new layer2Class()as Bitmap;
 
-		[Embed(source="../assests/bike.png")]
+		[Embed(source="../assets/bike.png")]
 		private var layer3Class:Class;
 		var layer3:Bitmap = new layer3Class() as Bitmap;
 		
-		[Embed(source="../assests/canned-goods-md.png")]
+		[Embed(source="../assets/canned-goods-md.png")]
 		private var layer4Class:Class;
 		var layer4:Bitmap = new layer4Class() as Bitmap;
 		
-		[Embed(source="../assests/car.png")]
+		[Embed(source="../assets/car.png")]
 		private var layer5Class:Class;
 		var layer5:Bitmap = new layer5Class() as Bitmap;
 		
-		[Embed(source="../assests/fireworks.png")]
+		[Embed(source="../assets/fireworks.png")]
 		private var layer6Class:Class;
 		var layer6:Bitmap = new layer6Class() as Bitmap;
 		
-		[Embed(source="../assests/flashlight.png")]
+		[Embed(source="../assets/flashlight.png")]
 		private var layer7Class:Class;
 		var layer7:Bitmap = new layer7Class() as Bitmap;
 		
-		[Embed(source="../assests/gobag.png")]
+		[Embed(source="../assets/gobag.png")]
 		private var layer8Class:Class;
 		var layer8:Bitmap = new layer8Class() as Bitmap;
 		
-		[Embed(source="../assests/radio.png")]
+		[Embed(source="../assets/radio.png")]
 		private var layer9Class:Class;
 		var layer9:Bitmap = new layer9Class() as Bitmap;
 		
-		[Embed(source="../assests/tv.png")]
+		[Embed(source="../assets/tv.png")]
 		private var layer10Class:Class;
 		var layer10:Bitmap = new layer10Class() as Bitmap;
 		
-		[Embed(source="../assests/waterbottle.png")]
+		[Embed(source="../assets/waterbottle.png")]
 		private var layer11Class:Class;
 		var layer11:Bitmap = new layer11Class() as Bitmap;
 		
-		[Embed(source="../assests/wrench.png")]
+		[Embed(source="../assets/wrench.png")]
 		private var layer12Class:Class;
 		var layer12:Bitmap = new layer12Class() as Bitmap;
 
@@ -68,11 +71,17 @@
 			new layer3Class(),
 			new layer4Class(),
 			new layer5Class(),
-			new layer6Class()
+			new layer6Class(),
+			new layer7Class(),
+			new layer8Class(),
+			new layer9Class(),
+			new layer10Class(),
+			new layer11Class(),
+			new layer12Class()
 		);
 		
-		private var startPositionsX:Array = new Array(0, 0, -160, -320);
-		private var startPositionsY:Array = new Array(0, 10, 20, 30);
+		private var startPositionsX:Array = new Array(0, 100, 200, 300,400,500,600,700,800,900,1000,1100);
+		private var startPositionsY:Array = new Array(0, 100, 200, 300,400,500,600,700,800,900,1000,1100);
 		
 		var xPos:int; 
 		var yPos:int; 
@@ -91,35 +100,27 @@
 			for (var i:int = 0; i < layers.length; i++ )
 			{
 				addChild(layers[i]);
-				layers[i].x = startPositionsX[i] + 50;
+				layers[i].x = startPositionsX[i];
 				layers[i].y = startPositionsY[i];
 			}
 			
-			stage.addEventListener(MouseEvent.MOUSE_MOVE, dragObject);
-			stage.addEventListener(MouseEvent.MOUSE_MOVE, stopDragObject);
+			layer0.addEventListener(MouseEvent.MOUSE_DOWN, dragObject);
+			layer0.addEventListener(MouseEvent.MOUSE_UP, stopDragObject);
 			
 			[SWF(width="1280", height="1000", backgroundColor="#000000", frameRate="30")]
 		}
 		
 		private function dragObject(e:MouseEvent):void
 		{
-			e.currentTarget.startDrag();
+			trace(e.currentTarget);
+			this.startDrag();
 		}
 		
 		private function stopDragObject(e:MouseEvent):void
 		{
-			if (e.target.hitTestObject(getChildByName(e.target.name + "Target")))
-			{
-				e.target.x = getChildByName(e.target.name + "Target").x;
-				e.target.y = getChildByName(e.target.name + "Target").y;
-			}
-			else
-			{
-				e.target.x = xPos;
-				e.target.y = yPos;
-			}
-
-			e.target.stopDrag();
+			
+			this.stopDrag();	
+			
 		}
 		
 		private function getPosition(target:Object):void
