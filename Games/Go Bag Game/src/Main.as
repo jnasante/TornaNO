@@ -1,10 +1,13 @@
 package 
 {
 	import flash.display.Bitmap;
+	import flash.display.Graphics;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.display.Graphics;
 	import components.*;
+	import flash.text.TextField;
 	
 	
 	public class Main extends Sprite 
@@ -123,8 +126,17 @@ package
 			}
 			
 			
+			var text:TextField = new TextField();
+			text.text = "GOO BAGGGGGG GAME";
+			text.border = true;
+			text.wordWrap = true;
+			text.width = 300;
+			text.height = 1000;
+			text.x = 1000;
+			text.y = 0;
+			addChild(text);
 			
-			[SWF(width="1280", height="1000", backgroundColor="#000000", frameRate="30")]
+			//[SWF(width="1280", height="1000", backgroundColor="#66000", frameRate="30")]
 		}
 		
 		private function dragObject(e:MouseEvent):void

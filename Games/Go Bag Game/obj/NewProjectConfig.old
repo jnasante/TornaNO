@@ -39,10 +39,10 @@
   <file-specs>
     <path-element>C:\Users\Harrison\Downloads\TornaNO\Games\Go Bag Game\src\Main.as</path-element>
   </file-specs>
-  <default-background-color>#FFFFFF</default-background-color>
+  <default-background-color>#800000</default-background-color>
   <default-frame-rate>30</default-frame-rate>
   <default-size>
-    <width>800</width>
-    <height>600</height>
+    <width>1280</width>
+    <height>800</height>
   </default-size>
 </flex-config>
