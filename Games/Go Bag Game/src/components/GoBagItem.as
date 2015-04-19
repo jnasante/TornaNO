@@ -28,7 +28,7 @@
 			
 		}
 		
-		privage function releaseObject(e.MouseEvent):void{
+		private function releaseObject(e:MouseEvent):void{
 			
 		}
 
