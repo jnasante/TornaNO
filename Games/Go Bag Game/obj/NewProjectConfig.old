@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'4/19/2015'</value>
+      <value>'4/22/2015'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -39,7 +39,7 @@
   <file-specs>
     <path-element>C:\Users\Harrison\Downloads\TornaNO\Games\Go Bag Game\src\Main.as</path-element>
   </file-specs>
-  <default-background-color>#800000</default-background-color>
+  <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>
   <default-size>
     <width>1280</width>
