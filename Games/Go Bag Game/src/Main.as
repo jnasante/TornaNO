@@ -1,4 +1,4 @@
-﻿package 
+package 
 {
 	import flash.display.Bitmap;
 	import flash.display.Graphics;
@@ -111,9 +111,9 @@
 		var item18 = new GoBagItem("multitool","A multitool can be used as a knife, a can opener, scissors, and more.",true,layer18);
 		
 		[Embed(source="../assets/teddybear.png")]
-		private var layer18Class:Class;
-		var layer18:Bitmap = new layer18Class() as Bitmap;
-		var item18 = new GoBagItem("teddy bear","A soft toy bear.",true,layer18);
+		private var layer19Class:Class;
+		var layer19:Bitmap = new layer19Class() as Bitmap;
+		var item19 = new GoBagItem("teddy bear","A soft toy bear.",true,layer19);
 		
 		private var items:Array = new Array(
 			item0,
@@ -134,7 +134,8 @@
 			item15,
 			item16,
 			item17,
-			item18
+			item18,
+			item19
 		);
 		
 		private var startPositionsX:Array = new Array(0, 50, 100, 150,200,250,300,350,400,450,500,550);
