@@ -176,6 +176,8 @@
 			text.height = 1000;
 			text.x = 1000;
 			text.y = 0;
+			text.textColor = 0xFFFFFF;
+			text.backgroundColor = 0xaba9a9;
 			addChild(text);
 			
 			//[SWF(width="1280", height="1000", backgroundColor="#66000", frameRate="30")]
