@@ -1,5 +1,6 @@
 ﻿package 
 {
+	import flash.display.MovieClip;
 	import flash.display.Bitmap;
 	import flash.display.Graphics;
 	import flash.display.Sprite;
@@ -10,7 +11,7 @@
 	import flash.text.TextField;
 	
 	
-	public class Main extends Sprite 
+	public class Main extends MovieClip
 	{
 		
 		[Embed(source="../assets/11949863251401131855candy_31.svg.med.png")]
@@ -197,6 +198,13 @@
 		{
 			xPos = target.x;
 			yPos = target.y;
+		}
+		
+		private function itemHover(e:MouseEvent.MOUSE_OVER): void
+		{
+			if(getQualifiedClassName(e.currentTarget) == "GoBagItem"){
+				text.text = "Name: "e.currentTarget.name + "\n\n" + "Desciption: " + e.currentTarget.description;
+			}
 		}
 		
 	}
