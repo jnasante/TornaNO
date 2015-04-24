@@ -1,4 +1,4 @@
-package components{
+﻿package components{
 	
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
@@ -22,7 +22,7 @@ package components{
 			imageSprite.addChild(imageMap);
 		}
 		
-		public function addtoBag(item:GoBagItem){
+		public function addtoBag(item:GoBagItem):void{
 			
 			trace("you dropped something on the bag!")
 			
@@ -34,6 +34,17 @@ package components{
 			else{
 					trace("This item was not accepted");
 			}
+		}
+		
+		public function getScore():String{
+			//READ THIS - test for syntax
+			var correct:int = 0;
+			for(var i = 0; i < itemsArray.length; i++){
+				if(itemsArray[i].isAccepted){
+					correct++;
+				}
+			}
+			return correct + "/" + itemsArray.length;
 		}
 
 	}
