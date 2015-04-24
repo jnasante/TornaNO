@@ -152,7 +152,7 @@
 			item17,
 			item18,
 			item19,
-			bag,
+			bag
 		);
 		
 		private var startPositionsX:Array = new Array(0, 50, 100, 150,200,250,300,350,400,450,500,550);
