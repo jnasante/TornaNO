@@ -12,7 +12,7 @@
     <movie minorVersion="0" />
     <movie platform="Flash Player" />
     <movie background="#FFFFFF" />
-    <movie preferredSDK="C:\Users\Harrison\Downloads\flex_sdk_4.6" />
+    <movie preferredSDK="C:\Users\Patrick\Downloads\Flex SDK" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
@@ -65,7 +65,7 @@
   </rslPaths>
   <!-- Intrinsic Libraries -->
   <intrinsics>
-    <!-- example: <element path="..." /> -->
+    <element path="Library\AS3\frameworks\Flex3" />
   </intrinsics>
   <!-- Assets to embed into the output SWF -->
   <library>

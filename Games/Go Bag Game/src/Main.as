@@ -127,7 +127,7 @@
 		[Embed(source="../assets/gobag.png")]
 		private var layer20Class:Class;
 		var layer20:Bitmap = new layer20Class() as Bitmap;
-		var bag = new GoBag(layer20);
+		var bag = new GoBag(layer20, true);
 		
 		private var items:Array = new Array(
 			item0,
@@ -149,7 +149,8 @@
 			item16,
 			item17,
 			item18,
-			item19
+			item19,
+			bag,
 		);
 		
 		private var startPositionsX:Array = new Array(0, 50, 100, 150,200,250,300,350,400,450,500,550);
@@ -192,7 +193,7 @@
 			
 			
 			
-			textBox.text = "GOO BAGGGGGG GAME";
+			textBox.text = "GO000000000000O BAGGGGGG GAME";
 			textBox.border = true;
 			textBox.wordWrap = true;
 			textBox.width = 300;

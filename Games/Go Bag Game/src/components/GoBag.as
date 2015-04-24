@@ -2,16 +2,20 @@ package components{
 	
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
-	public class GoBag {
+	import flash.events.MouseEvent;
+	
+	public class GoBag extends Sprite{
 
 		public var itemsArray:Array;
 		public var itemName:String;
+		public var isAccepted;
 		public var description:String;
 		public var imageSprite:Sprite;
 		
-		public function GoBag(imageMap:Bitmap) {
+		public function GoBag(imageMap:Bitmap, acceptance:Boolean) {
 			trace("go bag connected");
 			itemsArray = new Array();
+			isAccepted = acceptance;
 			
 			imageSprite = new Sprite();
 			addChild(imageSprite);
