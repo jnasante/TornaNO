@@ -10,6 +10,7 @@
 	import flash.display.Graphics;
 	import components.*;
 	import flash.text.TextField;
+	import mx.controls.Alert;
 	
 	
 	public class Main extends MovieClip
@@ -123,6 +124,7 @@
 		var background:DisplayObject = layer21;
 		
 		var textBox:TextField = new TextField();
+		var itemsAdded:int = 0;
 		
 		[Embed(source="../assets/gobag.png")]
 		private var layer20Class:Class;
@@ -240,6 +242,24 @@
 			
 				textBox.text = "Name: "+e.currentTarget.itemName + "\n\n" + "Desciption: " + e.currentTarget.description;
 			
+		}
+		
+		private function checkForEnd(): void
+		{
+			if(itemsAdded == 10)
+			{
+				// READ THIS!!! 
+				// Creates a dialog box alert that will have a message about the user's score and a retry button
+				// I can't test it because I can't run the game, but we will have to chagne the button type, create a function that resets the game, and adjust the message
+				var myClickHandler:Function = function (evt_obj:Object) {
+					if (evt_obj.detail == Alert.OK) {
+						trace(Alert.okLabel);
+					} else if (evt_obj.detail == Alert.CANCEL){
+						trace(Alert.cancelLabel);
+					}
+				};
+				var dialog_obj:Object = Alert.show("Test Alert", "Test", Alert.OK | Alert.CANCEL, null, myClickHandler, "testIcon", Alert.OK);
+			}
 		}
 		
 	}
