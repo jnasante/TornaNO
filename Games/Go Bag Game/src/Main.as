@@ -18,7 +18,7 @@
 		[Embed(source="../assets/11949863251401131855candy_31.svg.med.png")]
 		private var layer0Class:Class;
 		var layer0:Bitmap = new layer0Class() as Bitmap;
-		var item0 = new GoBagItem("Candy","Candy is a yummy treat, but it is not good for nutrition or sustained energy in a crisis.",true,layer0);
+		var item0 = new GoBagItem("Candy","Candy is a yummy treat, but it is not good for nutrition or sustained energy in a crisis.",false,layer0);
 		
 		
 		[Embed(source="../assets/11971038831932190305kelan_whistle.svg.med.png")]
@@ -29,12 +29,12 @@
 		[Embed(source="../assets/basketball.png")]
 		private var layer2Class:Class;
 		var layer2:Bitmap = new layer2Class() as Bitmap;
-		var item2 = new GoBagItem("Basketball","Basketballs are a source of outdoors entertainment.",true,layer2);
+		var item2 = new GoBagItem("Basketball","Basketballs are a source of outdoors entertainment.",false,layer2);
 
 		[Embed(source="../assets/bike.png")]
 		private var layer3Class:Class;
 		var layer3:Bitmap = new layer3Class() as Bitmap;
-		var item3 = new GoBagItem("Bike","A bike is a means of transportation. However, it can only be used by one person and it may not be practical after a tornado.",true,layer3);
+		var item3 = new GoBagItem("Bike","A bike is a means of transportation. However, it can only be used by one person and it may not be practical after a tornado.",false,layer3);
 		
 		
 		[Embed(source="../assets/canned-goods-md.png")]
@@ -50,7 +50,7 @@
 		[Embed(source="../assets/fireworks.png")]
 		private var layer6Class:Class;
 		var layer6:Bitmap = new layer6Class() as Bitmap;
-		var item6 = new GoBagItem("Fireworks","Fireworks are explosive and may start dangerous fires.",true,layer6);
+		var item6 = new GoBagItem("Fireworks","Fireworks are explosive and may start dangerous fires.",false,layer6);
 		
 		[Embed(source="../assets/flashlight.png")]
 		private var layer7Class:Class;
@@ -70,7 +70,7 @@
 		[Embed(source="../assets/doll.png")]
 		private var layer10Class:Class;
 		var layer10:Bitmap = new layer10Class() as Bitmap;
-		var item10 = new GoBagItem("Doll","A small toy figurine.",true,layer10);
+		var item10 = new GoBagItem("Doll","A small toy figurine.",false,layer10);
 		
 		[Embed(source="../assets/waterbottle.png")]
 		private var layer11Class:Class;
@@ -90,7 +90,7 @@
 		[Embed(source="../assets/gamesystem.png")]
 		private var layer14Class:Class;
 		var layer14:Bitmap = new layer14Class() as Bitmap;
-		var item14 = new GoBagItem("Game System","Game systems are a source of entertainment, but require batteries that might be used for radios and flashlights.",true,layer14);
+		var item14 = new GoBagItem("Game System","Game systems are a source of entertainment, but require batteries that might be used for radios and flashlights.",false,layer14);
 		
 		[Embed(source="../assets/hardhat.png")]
 		private var layer15Class:Class;
@@ -105,7 +105,7 @@
 		[Embed(source="../assets/mp3.png")]
 		private var layer17Class:Class;
 		var layer17:Bitmap = new layer17Class() as Bitmap;
-		var item17 = new GoBagItem("MP3 Player","MP3 players allow you to listen to music.",true,layer17);
+		var item17 = new GoBagItem("MP3 Player","MP3 players allow you to listen to music.",false,layer17);
 		
 		[Embed(source="../assets/multitool.png")]
 		private var layer18Class:Class;
@@ -115,6 +115,7 @@
 		[Embed(source="../assets/teddybear.png")]
 		private var layer19Class:Class;
 		var layer19:Bitmap = new layer19Class() as Bitmap;
+<<<<<<< HEAD
 		var item19 = new GoBagItem("Teddy Bear", "A soft toy bear.", true, layer19);
 		
 		[Embed(source = "../assets/tabletop.png")]
@@ -123,6 +124,14 @@
 		var background:DisplayObject = layer21;
 		
 		var textBox:TextField = new TextField();
+=======
+		var item19 = new GoBagItem("Teddy Bear","A soft toy bear.",false,layer19);
+		
+		[Embed(source="../assets/gobag.png")]
+		private var layer20Class:Class;
+		var layer20:Bitmap = new layer20Class() as Bitmap;
+		var bag = new GoBag(layer20);
+>>>>>>> origin/master
 		
 		private var items:Array = new Array(
 			item0,

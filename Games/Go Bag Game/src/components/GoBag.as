@@ -1,4 +1,4 @@
-﻿package components{
+package components{
 	
 	public class GoBag {
 
