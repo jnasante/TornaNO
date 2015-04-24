@@ -4,11 +4,10 @@
 
 		public var itemsArray:Array;
 		
-		
-		public function GoBag() {
+		public function GoBag() 
+		{
 			trace("go bag connected");
 			itemsArray = new Array();
-			
 		}
 		
 		public function addtoBag(GoBagItem item){
@@ -20,7 +19,6 @@
 					trace("A valid item was dropped");
 					itemsArray.push(item.itemName)
 					
-			
 			}
 			else
 			{
