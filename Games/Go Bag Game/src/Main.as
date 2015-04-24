@@ -1,5 +1,6 @@
 ﻿package 
 {
+	import flash.display.DisplayObject;
 	import flash.display.MovieClip;
 	import flash.display.Bitmap;
 	import flash.display.Graphics;
@@ -114,7 +115,14 @@
 		[Embed(source="../assets/teddybear.png")]
 		private var layer19Class:Class;
 		var layer19:Bitmap = new layer19Class() as Bitmap;
-		var item19 = new GoBagItem("Teddy Bear","A soft toy bear.",true,layer19);
+		var item19 = new GoBagItem("Teddy Bear", "A soft toy bear.", true, layer19);
+		
+		[Embed(source = "../assets/tabletop.png")]
+		private var layer21Class:Class;
+		var layer21:Bitmap = new layer21Class() as Bitmap;
+		var background:DisplayObject = layer21;
+		
+		var textBox:TextField = new TextField();
 		
 		private var items:Array = new Array(
 			item0,
@@ -165,22 +173,32 @@
 				items[i].scaleX = items[i].scaleY;
 				items[i].addEventListener(MouseEvent.MOUSE_DOWN, dragObject);
 				items[i].addEventListener(MouseEvent.MOUSE_UP, stopDragObject);
+				items[i].addEventListener(MouseEvent.MOUSE_OVER, itemHover);
 			}
 			
 			
-			var text:TextField = new TextField();
-			text.text = "GOO BAGGGGGG GAME";
-			text.border = true;
-			text.wordWrap = true;
-			text.width = 300;
-			text.height = 1000;
-			text.x = 1000;
-			text.y = 0;
-			text.textColor = 0xFFFFFF;
-			text.backgroundColor = 0xaba9a9;
-			addChild(text);
 			
+			textBox.text = "GOO BAGGGGGG GAME";
+			textBox.border = true;
+			textBox.wordWrap = true;
+			textBox.width = 300;
+			textBox.height = 1000;
+			textBox.x = 1000;
+			textBox.y = 0;
+			textBox.background = true;
+			textBox.textColor = 0xFFFFFF;
+			textBox.backgroundColor = 0xaba9a9;
+			addChild(textBox);
+			
+			var scale:Number = stage.stageWidth / background.width;
+			if (background.height * scale > stage.stageHeight)
+			{
+				scale - stage.stageHeight / background.height;
+			}
+			
+			background.scaleX = background.scaleY = scale;
 			//[SWF(width="1280", height="1000", backgroundColor="#66000", frameRate="30")]
+			addChildAt(background, 0);
 		}
 		
 		private function dragObject(e:MouseEvent):void
@@ -203,11 +221,11 @@
 			yPos = target.y;
 		}
 		
-		private function itemHover(e:MouseEvent.MOUSE_OVER): void
+		private function itemHover(e:MouseEvent): void
 		{
-			if(getQualifiedClassName(e.currentTarget) == "GoBagItem"){
-				text.text = "Name: "e.currentTarget.name + "\n\n" + "Desciption: " + e.currentTarget.description;
-			}
+			
+				textBox.text = "Name: "+e.currentTarget.itemName + "\n\n" + "Desciption: " + e.currentTarget.description;
+			
 		}
 		
 	}
