@@ -115,7 +115,6 @@
 		[Embed(source="../assets/teddybear.png")]
 		private var layer19Class:Class;
 		var layer19:Bitmap = new layer19Class() as Bitmap;
-<<<<<<< HEAD
 		var item19 = new GoBagItem("Teddy Bear", "A soft toy bear.", true, layer19);
 		
 		[Embed(source = "../assets/tabletop.png")]
@@ -124,14 +123,11 @@
 		var background:DisplayObject = layer21;
 		
 		var textBox:TextField = new TextField();
-=======
-		var item19 = new GoBagItem("Teddy Bear","A soft toy bear.",false,layer19);
 		
 		[Embed(source="../assets/gobag.png")]
 		private var layer20Class:Class;
 		var layer20:Bitmap = new layer20Class() as Bitmap;
 		var bag = new GoBag(layer20);
->>>>>>> origin/master
 		
 		private var items:Array = new Array(
 			item0,
@@ -157,7 +153,10 @@
 		);
 		
 		private var startPositionsX:Array = new Array(0, 50, 100, 150,200,250,300,350,400,450,500,550);
-		private var startPositionsY:Array = new Array(0, 50, 100, 150,200,250,300,350,400,450,500,550);
+		private var startPositionsY:Array = new Array(0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550);
+		
+		private var goodItems:Array = new Array();
+		private var badItems:Array = new Array();
 		
 		var xPos:int; 
 		var yPos:int; 
@@ -175,6 +174,12 @@
 			
 			for (var i:int = 1; i < items.length; i++ )
 			{
+				if (items[i].isAccepted == true)
+					goodItems.push(items[i]);
+				else
+					badItems.push(items[i]);
+					
+				trace(goodItems.length);	
 				addChild(items[i]);
 				items[i].x = startPositionsX[i];
 				items[i].y = startPositionsY[i];

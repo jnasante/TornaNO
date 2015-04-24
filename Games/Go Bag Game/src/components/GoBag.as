@@ -1,5 +1,7 @@
 package components{
 	
+	import flash.display.Bitmap;
+	import flash.display.Sprite;
 	public class GoBag {
 
 		public var itemsArray:Array;
@@ -16,7 +18,7 @@ package components{
 			imageSprite.addChild(imageMap);
 		}
 		
-		public function addtoBag(item:GoBagItem, ){
+		public function addtoBag(item:GoBagItem){
 			
 			trace("you dropped something on the bag!")
 			
