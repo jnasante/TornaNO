@@ -12,7 +12,11 @@
     <movie minorVersion="0" />
     <movie platform="Flash Player" />
     <movie background="#FFFFFF" />
+<<<<<<< HEAD
     <movie preferredSDK="C:\Users\Harrison\Downloads\flex_sdk_4.6" />
+=======
+    <movie preferredSDK="C:\Users\Patrick\FLEX" />
+>>>>>>> origin/master
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
