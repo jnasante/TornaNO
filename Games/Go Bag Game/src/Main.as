@@ -156,8 +156,8 @@
 		
 		
 		
-		private var startPositionsX:Array = new Array(0, 50, 100, 150,200,250,300,350,400,450,500,550);
-		private var startPositionsY:Array = new Array(0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550);
+		private var startPositionsX:Array = new Array(50, 150, 250, 350);
+		private var startPositionsY:Array = new Array(50, 150, 250, 350, 450);
 		
 		private var goodItems:Array = new Array();
 		private var badItems:Array = new Array();
@@ -186,8 +186,8 @@
 					
 					
 				addChild(items[i]);
-				items[i].x = startPositionsX[i];
-				items[i].y = startPositionsY[i];
+				items[i].x = startPositionsX[i%4];
+				items[i].y = startPositionsY[i%5];
 				items[i].height = 75;
 				items[i].scaleX = items[i].scaleY;
 				items[i].addEventListener(MouseEvent.MOUSE_DOWN, dragObject);
@@ -279,8 +279,11 @@
 		
 		private function checkForEnd(): void
 		{
-			if(itemsAdded == 10)
+			if(itemsAdded == goodItems.length)
 			{
+				//this should go somwewhere else but is backbone of score calculation
+				trace(bag.getScore());
+				
 				// READ THIS!!! 
 				// Creates a dialog box alert that will have a message about the user's score and a retry button
 				// I can't test it because I can't run the game, but we will have to chagne the button type, create a function that resets the game, and adjust the message
