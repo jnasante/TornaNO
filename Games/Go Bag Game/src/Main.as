@@ -116,7 +116,7 @@
 		[Embed(source="../assets/teddybear.png")]
 		private var layer19Class:Class;
 		var layer19:Bitmap = new layer19Class() as Bitmap;
-		var item19 = new GoBagItem("Teddy Bear", "A soft toy bear.", true, layer19);
+		var item19 = new GoBagItem("Teddy Bear", "A soft toy bear.", false, layer19);
 		
 		[Embed(source = "../assets/tabletop.png")]
 		private var layer21Class:Class;
@@ -151,9 +151,14 @@
 			item16,
 			item17,
 			item18,
-			item19,
-			bag
+			item19
 		);
+		
+		addChild(bag);
+		bag.x = stage.width - 200;
+		bag.y = stage.height - 300;
+		bag.height = 100;
+		bag.scaleX = bag.scaleY;
 		
 		private var startPositionsX:Array = new Array(0, 50, 100, 150,200,250,300,350,400,450,500,550);
 		private var startPositionsY:Array = new Array(0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550);
@@ -182,7 +187,7 @@
 				else
 					badItems.push(items[i]);
 					
-				trace(goodItems.length);	
+					
 				addChild(items[i]);
 				items[i].x = startPositionsX[i];
 				items[i].y = startPositionsY[i];
@@ -193,7 +198,8 @@
 				items[i].addEventListener(MouseEvent.MOUSE_OVER, itemHover);
 			}
 			
-			
+			trace("good "+goodItems.length);
+			trace("bad " +badItems.length);
 			
 			textBox.text = "GO000000000000O BAGGGGGG GAME";
 			textBox.border = true;
@@ -228,8 +234,22 @@
 		private function stopDragObject(e:MouseEvent):void
 		{
 			
-			this.stopDrag();	
+			this.stopDrag();
+			if (dropTarget)
+			{
+				trace(dropTarget.parent.name);//verify instance names
+				
+				if (dropTarget.parent.name == "bag")//check for the instance name of the go-bag, what i think it is
+					{
+						
+						//here the item has been dropped on something and it is the bag
+						//add it to the bag and remove from the stage
+					}
+					
+					//dropped the iterm on something but not the bag do nothing
+			}
 			
+			//here it was dropped on nothing
 		}
 		
 		private function getPosition(target:Object):void
@@ -259,7 +279,8 @@
 						trace(Alert.cancelLabel);
 					}
 				};
-				var dialog_obj:Object = Alert.show("Test Alert", "Test", Alert.OK | Alert.CANCEL, null, myClickHandler, "testIcon", Alert.OK);
+			var dialog_obj:Object = new Object();
+			 dialog_obj = Alert.show("Test Alert", "Test", Alert.OK, null, myClickHandler, null,Alert.OK);
 			}
 		}
 		
