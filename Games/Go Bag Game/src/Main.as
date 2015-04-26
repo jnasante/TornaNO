@@ -254,6 +254,7 @@
 						e.currentTarget.visible = false;
 						e.currentTarget.x = stage.width;
 						e.currentTarget.y = stage.height;
+						checkForEnd();
 						
 					}
 					
