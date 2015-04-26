@@ -207,9 +207,10 @@
 			textBox.text = "GO000000000000O BAGGGGGG GAME";
 			textBox.border = true;
 			textBox.wordWrap = true;
-			textBox.width = 300;
-			textBox.height = 1000;
-			textBox.x = 1000;
+			textBox.width = (220+stage.width)/4;
+			textBox.height = stage.height;
+			trace("width " + stage.height); 
+			textBox.x = 600;
 			textBox.y = 0;
 			textBox.background = true;
 			textBox.textColor = 0xFFFFFF;
