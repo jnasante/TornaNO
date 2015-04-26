@@ -116,7 +116,7 @@
 		[Embed(source="../assets/teddybear.png")]
 		private var layer19Class:Class;
 		var layer19:Bitmap = new layer19Class() as Bitmap;
-		var item19 = new GoBagItem("Teddy Bear", "A soft toy bear.", true, layer19);
+		var item19 = new GoBagItem("Teddy Bear", "A soft toy bear.", false, layer19);
 		
 		[Embed(source = "../assets/tabletop.png")]
 		private var layer21Class:Class;
@@ -151,9 +151,14 @@
 			item16,
 			item17,
 			item18,
-			item19,
-			bag
+			item19
 		);
+		
+		addChild(bag);
+		bag.x = stage.width - 200;
+		bag.y = stage.height - 300;
+		bag.height = 100;
+		bag.scaleX = bag.scaleY;
 		
 		private var startPositionsX:Array = new Array(0, 50, 100, 150,200,250,300,350,400,450,500,550);
 		private var startPositionsY:Array = new Array(0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550);
