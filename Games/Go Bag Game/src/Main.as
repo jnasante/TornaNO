@@ -237,13 +237,16 @@
 					{
 						
 						//here the item has been dropped on something and it is the bag
+						itemsAdded = itemsAdded + 1;
 						//add it to the bag and remove from the stage
+						bag.addItemToBag(dropTarget.parent.name);
+						removeChild(this);
 					}
 					
 					//dropped the iterm on something but not the bag do nothing
 			}
 			
-			//here it was dropped on nothing
+			//here it was dropped on nothing, continue to do nothing
 		}
 		
 		private function getPosition(target:Object):void
