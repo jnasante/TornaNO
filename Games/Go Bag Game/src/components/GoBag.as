@@ -23,7 +23,7 @@
 			imageSprite.addChild(imageMap);
 		}
 		
-		public function addtoBag(item:GoBagItem):void{
+		public function addToBag(item:GoBagItem):void{
 			
 			trace("you dropped something on the bag!")
 			

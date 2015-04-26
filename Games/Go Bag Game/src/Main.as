@@ -238,20 +238,23 @@
 		private function stopDragObject(e:MouseEvent):void
 		{
 			
-			this.stopDrag();
+			e.currentTarget.stopDrag();
 			trace(e.currentTarget.dropTarget.parent.name);
 			if (e.currentTarget.dropTarget)
 			{
 				trace("dropped");//verify instance names
 				
-				if (e.currentTarget.dropTarget.parent.name == "bag")//check for the instance name of the go-bag, what i think it is
+				if (e.currentTarget.dropTarget.parent.name == "instance65")//check for the instance name of the go-bag, what i think it is
 					{
 						
 						//here the item has been dropped on something and it is the bag
 						itemsAdded = itemsAdded + 1;
 						//add it to the bag and remove from the stage
-						bag.addItemToBag(dropTarget.parent.name);
-						removeChild(this);
+						bag.addToBag(e.currentTarget);
+						e.currentTarget.visible = false;
+						e.currentTarget.x = stage.width;
+						e.currentTarget.y = stage.height;
+						
 					}
 					
 					//dropped the iterm on something but not the bag do nothing
