@@ -13,7 +13,7 @@
 	import mx.controls.Alert;
 	
 	
-	public class Main extends MovieClip
+	public class Main extends Sprite
 	{
 		
 		[Embed(source="../assets/11949863251401131855candy_31.svg.med.png")]
@@ -116,7 +116,7 @@
 		[Embed(source="../assets/teddybear.png")]
 		private var layer19Class:Class;
 		var layer19:Bitmap = new layer19Class() as Bitmap;
-		var item19 = new GoBagItem("Teddy Bear", "A soft toy bear.", true, layer19);
+		var item19 = new GoBagItem("Teddy Bear", "A soft toy bear.", false, layer19);
 		
 		[Embed(source = "../assets/tabletop.png")]
 		private var layer21Class:Class;
@@ -151,9 +151,10 @@
 			item16,
 			item17,
 			item18,
-			item19,
-			bag
+			item19
 		);
+		
+		
 		
 		private var startPositionsX:Array = new Array(0, 50, 100, 150,200,250,300,350,400,450,500,550);
 		private var startPositionsY:Array = new Array(0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550);
@@ -175,6 +176,7 @@
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			
 			
+			
 			for (var i:int = 1; i < items.length; i++ )
 			{
 				if (items[i].isAccepted == true)
@@ -182,7 +184,7 @@
 				else
 					badItems.push(items[i]);
 					
-				trace(goodItems.length);	
+					
 				addChild(items[i]);
 				items[i].x = startPositionsX[i];
 				items[i].y = startPositionsY[i];
@@ -193,7 +195,14 @@
 				items[i].addEventListener(MouseEvent.MOUSE_OVER, itemHover);
 			}
 			
+			trace("good "+goodItems.length);
+			trace("bad " +badItems.length);
 			
+			addChild(bag);
+			bag.x = stage.width - 200;
+			bag.y = stage.height - 300;
+			bag.height = 100;
+			bag.scaleX = bag.scaleY;
 			
 			textBox.text = "GO000000000000O BAGGGGGG GAME";
 			textBox.border = true;
@@ -205,7 +214,7 @@
 			textBox.background = true;
 			textBox.textColor = 0xFFFFFF;
 			textBox.backgroundColor = 0xaba9a9;
-			addChild(textBox);
+			
 			
 			var scale:Number = stage.stageWidth / background.width;
 			if (background.height * scale > stage.stageHeight)
@@ -216,6 +225,7 @@
 			background.scaleX = background.scaleY = scale;
 			//[SWF(width="1280", height="1000", backgroundColor="#66000", frameRate="30")]
 			addChildAt(background, 0);
+			addChild(textBox);
 		}
 		
 		private function dragObject(e:MouseEvent):void
@@ -229,11 +239,12 @@
 		{
 			
 			this.stopDrag();
-			if (dropTarget)
+			trace(e.currentTarget.dropTarget.parent.name);
+			if (e.currentTarget.dropTarget)
 			{
-				trace(dropTarget.parent.name);//verify instance names
+				trace("dropped");//verify instance names
 				
-				if (dropTarget.parent.name == "bag")//check for the instance name of the go-bag, what i think it is
+				if (e.currentTarget.dropTarget.parent.name == "bag")//check for the instance name of the go-bag, what i think it is
 					{
 						
 						//here the item has been dropped on something and it is the bag
@@ -276,7 +287,8 @@
 						trace(Alert.cancelLabel);
 					}
 				};
-				var dialog_obj:Object = Alert.show("Test Alert", "Test", Alert.OK | Alert.CANCEL, null, myClickHandler, "testIcon", Alert.OK);
+			var dialog_obj:Object = new Object();
+			 dialog_obj = Alert.show("Test Alert", "Test", Alert.OK, null, myClickHandler, null,Alert.OK);
 			}
 		}
 		
