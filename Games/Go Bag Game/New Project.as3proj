@@ -6,17 +6,12 @@
     <movie input="" />
     <movie path="bin\NewProject.swf" />
     <movie fps="30" />
-    <movie width="1280" />
+    <movie width="800" />
     <movie height="800" />
     <movie version="17" />
     <movie minorVersion="0" />
     <movie platform="Flash Player" />
     <movie background="#FFFFFF" />
-<<<<<<< HEAD
-    <movie preferredSDK="C:\Users\Harrison\Downloads\flex_sdk_4.6" />
-=======
-    <movie preferredSDK="C:\Users\Patrick\FLEX" />
->>>>>>> origin/master
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
@@ -69,12 +64,11 @@
   </rslPaths>
   <!-- Intrinsic Libraries -->
   <intrinsics>
-    <element path="Library\AS3\frameworks\Flex3" />
+    <!-- example: <element path="..." /> -->
   </intrinsics>
   <!-- Assets to embed into the output SWF -->
   <library>
-    <asset path="Images\11949863251401131855candy_31.svg.med.png" update="..\..\Google Drive\GoBagImages\11949863251401131855candy_31.svg.med.png" />
-    <asset path="Images\wrench.png" />
+    <!-- example: <asset path="..." id="..." update="..." glyphs="..." mode="..." place="..." sharepoint="..." /> -->
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
@@ -91,7 +85,7 @@
   <!-- Other project options -->
   <options>
     <option showHiddenPaths="False" />
-    <option testMovie="ExternalPlayer" />
+    <option testMovie="Default" />
     <option testMovieCommand="" />
   </options>
   <!-- Plugin storage -->

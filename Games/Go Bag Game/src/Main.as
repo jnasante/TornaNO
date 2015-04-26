@@ -13,7 +13,7 @@
 	import mx.controls.Alert;
 	
 	
-	public class Main extends MovieClip
+	public class Main extends Sprite
 	{
 		
 		[Embed(source="../assets/11949863251401131855candy_31.svg.med.png")]
@@ -154,11 +154,7 @@
 			item19
 		);
 		
-		addChild(bag);
-		bag.x = stage.width - 200;
-		bag.y = stage.height - 300;
-		bag.height = 100;
-		bag.scaleX = bag.scaleY;
+		
 		
 		private var startPositionsX:Array = new Array(0, 50, 100, 150,200,250,300,350,400,450,500,550);
 		private var startPositionsY:Array = new Array(0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550);
@@ -178,6 +174,7 @@
 		private function init(e:Event = null):void 
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
+			
 			
 			
 			for (var i:int = 1; i < items.length; i++ )
@@ -201,6 +198,12 @@
 			trace("good "+goodItems.length);
 			trace("bad " +badItems.length);
 			
+			addChild(bag);
+			bag.x = stage.width - 200;
+			bag.y = stage.height - 300;
+			bag.height = 100;
+			bag.scaleX = bag.scaleY;
+			
 			textBox.text = "GO000000000000O BAGGGGGG GAME";
 			textBox.border = true;
 			textBox.wordWrap = true;
@@ -211,7 +214,7 @@
 			textBox.background = true;
 			textBox.textColor = 0xFFFFFF;
 			textBox.backgroundColor = 0xaba9a9;
-			addChild(textBox);
+			
 			
 			var scale:Number = stage.stageWidth / background.width;
 			if (background.height * scale > stage.stageHeight)
@@ -222,6 +225,7 @@
 			background.scaleX = background.scaleY = scale;
 			//[SWF(width="1280", height="1000", backgroundColor="#66000", frameRate="30")]
 			addChildAt(background, 0);
+			addChild(textBox);
 		}
 		
 		private function dragObject(e:MouseEvent):void
@@ -235,11 +239,12 @@
 		{
 			
 			this.stopDrag();
-			if (dropTarget)
+			trace(e.currentTarget.dropTarget.parent.name);
+			if (e.currentTarget.dropTarget)
 			{
-				trace(dropTarget.parent.name);//verify instance names
+				trace("dropped");//verify instance names
 				
-				if (dropTarget.parent.name == "bag")//check for the instance name of the go-bag, what i think it is
+				if (e.currentTarget.dropTarget.parent.name == "bag")//check for the instance name of the go-bag, what i think it is
 					{
 						
 						//here the item has been dropped on something and it is the bag
