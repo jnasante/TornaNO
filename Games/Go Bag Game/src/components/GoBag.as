@@ -16,6 +16,7 @@ package components{
 			trace("go bag connected");
 			itemsArray = new Array();
 			isAccepted = acceptance;
+			itemName = "Go Bag";
 			
 			imageSprite = new Sprite();
 			addChild(imageSprite);

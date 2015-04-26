@@ -152,7 +152,7 @@
 			item17,
 			item18,
 			item19,
-			bag,
+			bag
 		);
 		
 		private var startPositionsX:Array = new Array(0, 50, 100, 150,200,250,300,350,400,450,500,550);
@@ -228,8 +228,22 @@
 		private function stopDragObject(e:MouseEvent):void
 		{
 			
-			this.stopDrag();	
+			this.stopDrag();
+			if (dropTarget)
+			{
+				trace(dropTarget.parent.name);//verify instance names
+				
+				if (dropTarget.parent.name == "bag")//check for the instance name of the go-bag, what i think it is
+					{
+						
+						//here the item has been dropped on something and it is the bag
+						//add it to the bag and remove from the stage
+					}
+					
+					//dropped the iterm on something but not the bag do nothing
+			}
 			
+			//here it was dropped on nothing
 		}
 		
 		private function getPosition(target:Object):void
