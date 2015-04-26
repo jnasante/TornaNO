@@ -182,7 +182,7 @@
 				else
 					badItems.push(items[i]);
 					
-				trace(goodItems.length);	
+					
 				addChild(items[i]);
 				items[i].x = startPositionsX[i];
 				items[i].y = startPositionsY[i];
@@ -193,7 +193,8 @@
 				items[i].addEventListener(MouseEvent.MOUSE_OVER, itemHover);
 			}
 			
-			
+			trace("good "+goodItems.length);
+			trace("bad " +badItems.length);
 			
 			textBox.text = "GO000000000000O BAGGGGGG GAME";
 			textBox.border = true;
@@ -259,7 +260,8 @@
 						trace(Alert.cancelLabel);
 					}
 				};
-				var dialog_obj:Object = Alert.show("Test Alert", "Test", Alert.OK | Alert.CANCEL, null, myClickHandler, "testIcon", Alert.OK);
+			var dialog_obj:Object = new Object();
+			 dialog_obj = Alert.show("Test Alert", "Test", Alert.OK, null, myClickHandler, null,Alert.OK);
 			}
 		}
 		
