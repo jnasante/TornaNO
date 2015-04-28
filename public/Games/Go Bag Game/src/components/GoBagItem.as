@@ -23,15 +23,6 @@
 			addEventListener(MouseEvent.MOUSE_DOWN, dragObject);
 			addEventListener(MouseEvent.MOUSE_UP, releaseObject);
 		}
-		
-		private function dragObject(e:MouseEvent):void{
-			
-		}
-		
-		private function releaseObject(e:MouseEvent):void{
-			
-		}
-
 	}
 	
 }
