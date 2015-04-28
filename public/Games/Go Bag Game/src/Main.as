@@ -190,6 +190,8 @@
 		
 		private function setUp(stage:Stage):void
 		{
+			
+			
 			for (var i:int = 1; i < items.length; i++ )
 			{
 				if (items[i].isAccepted == true)
@@ -200,7 +202,8 @@
 					
 				stage.addChild(items[i]);
 				items[i].x = startPositionsX[i%4];
-				items[i].y = startPositionsY[i%5];
+				items[i].y = startPositionsY[i % 5];
+				items[i].visible = true;
 				items[i].height = 75;
 				if(i == 7)
 				{
@@ -221,6 +224,7 @@
 			bag.y = stage.height + 100;
 			bag.height = 100;
 			bag.scaleX = bag.scaleY;
+
 			
 			textBox.text = "Welcome to the Go Bag Buidler game! A go bag is a useful tool for emergency preparedness that holds a few handy, necessary items. Whenever there is a tornado, grab your go bag and take it with you. \n\n You can see a bag and a group of items. Drag the items you think are most useful and appropriate and drag them into the bag at the bottom of the screen.";
 			textBox.border = true;
@@ -254,7 +258,7 @@
 		
 		private function stopDragObject(e:MouseEvent):void
 		{
-			
+			var stage:Stage = (e.currentTarget).parent;
 			e.currentTarget.stopDrag();
 			trace(e.currentTarget.dropTarget.parent.name);
 			if (e.currentTarget.dropTarget)
@@ -355,6 +359,7 @@
 			var stage:Stage = ((e.currentTarget).parent);
 			clearChildren(stage);
 			setUp(stage);
+			bag.y = 600;
 		}
 		
 		
