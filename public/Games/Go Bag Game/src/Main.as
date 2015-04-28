@@ -134,7 +134,7 @@
 		var bag = new GoBag(layer20, true);
 		
 		[Embed(source = "../assets/button.png")]
-		private var buttonLayerClass:Class;
+		private var buttonLayer:Class;
 		var button:Bitmap = new buttonLayer() as Bitmap;
 		
 		private var box = new Sprite();
@@ -183,8 +183,13 @@
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			
+			setUp(stage);
 			
 			
+		}
+		
+		private function setUp(stage:Stage):void
+		{
 			for (var i:int = 1; i < items.length; i++ )
 			{
 				if (items[i].isAccepted == true)
@@ -193,7 +198,7 @@
 					badItems.push(items[i]);
 					
 					
-				addChild(items[i]);
+				stage.addChild(items[i]);
 				items[i].x = startPositionsX[i%4];
 				items[i].y = startPositionsY[i%5];
 				items[i].height = 75;
@@ -211,7 +216,7 @@
 			trace("good "+goodItems.length);
 			trace("bad " +badItems.length);
 			
-			addChild(bag);
+			stage.addChild(bag);
 			bag.x = stage.width - 300;
 			bag.y = stage.height + 100;
 			bag.height = 100;
@@ -237,11 +242,9 @@
 			
 			background.scaleX = scale;
 			background.scaleY = 2;
-			//[SWF(width="1280", height="1000", backgroundColor="#66000", frameRate="30")]
-			addChildAt(background, 0);
-			addChild(textBox);
+			stage.addChildAt(background, 0);
+			stage.addChild(textBox);
 		}
-		
 		private function dragObject(e:MouseEvent):void
 		{
 			trace(e.currentTarget);
@@ -268,7 +271,7 @@
 						e.currentTarget.visible = false;
 						e.currentTarget.x = stage.width;
 						e.currentTarget.y = stage.height;
-						checkForEnd();
+						checkForEnd(stage);
 						
 					}
 					
@@ -291,16 +294,14 @@
 			
 		}
 		
-		private function checkForEnd(): void
+		private function checkForEnd(stage:Stage): void
 		{
 			if(itemsAdded == goodItems.length)
 			{
 				//this should go somwewhere else but is backbone of score calculation
 				trace(bag.getScore());
 				
-				// READ THIS!!! 
-				// Creates a dialog box alert that will have a message about the user's score and a retry button
-				// I can't test it because I can't run the game, but we will have to chagne the button type, create a function that resets the game, and adjust the message
+				
 				var myClickHandler:Function = function (evt_obj:Object) {
 					if (evt_obj.detail == Alert.OK) {
 						trace(Alert.okLabel);
@@ -309,6 +310,7 @@
 					}
 				};
 			clearChildren(stage);
+			endGame(stage);
 			}
 		}
 		
@@ -324,6 +326,11 @@
 			}
 			
 			
+			
+		}
+		
+		public function endGame(stage:Stage):void
+		{
 			var finalTxt = new TextField();
 			finalTxt.background = true;
 			finalTxt.backgroundColor = 0x0191C8;
@@ -332,14 +339,22 @@
 			finalTxt.textColor = 000000;
 			finalTxt.defaultTextFormat = new TextFormat("Arial", 30);
 			finalTxt.text = "Congratulations you put  " + bag.getScore() + " out of "+ goodItems.length + " correct items in the bag!";
-			parent.addChild(finalTxt);
+			stage.addChild(finalTxt);
 			
 			
 			box.addChild(button);
 			
-			parent.addChild(box);
+			stage.addChild(box);
+			box.addEventListener(MouseEvent.CLICK, setUpMenu2);
 			box.x = 300;
 			box.y = 300;
+		}
+		
+		public function setUpMenu2(e:MouseEvent):void
+		{
+			var stage:Stage = ((e.currentTarget).parent);
+			clearChildren(stage);
+			setUp(stage);
 		}
 		
 		
