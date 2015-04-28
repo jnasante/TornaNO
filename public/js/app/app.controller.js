@@ -20,6 +20,8 @@
 			Session.userId = $scope.currentUser._id;
 		}
 
+		$scope.username = "Timmy";
+
 		$scope.isAuthenticated = Auth.isAuthenticated;
 
 		$scope.setCurrentUser = function(user) {

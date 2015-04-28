@@ -31,11 +31,11 @@
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Hi, Kid<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Hi, {{username}}<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Change Name</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Settings</a></li>
+                <div class="input-group">
+                <input type="text" ng-model="username" class="form-control" placeholder="Change Name">
+                </div>
               </ul>
             </li>
           </ul>
