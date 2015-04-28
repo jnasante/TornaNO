@@ -29,7 +29,7 @@
 			
 			if(item.isAccepted){
 					trace("A valid item was dropped");
-					itemsArray.push(item.itemName)
+					itemsArray.push(item)
 			}
 			
 			else{
