@@ -297,7 +297,7 @@
 					}
 				};
 			var dialog_obj:Object = new Object();
-			 dialog_obj = Alert.show("Test Alert", "Test", Alert.OK, null, myClickHandler, null,Alert.OK);
+			 dialog_obj = Alert.show("GAME OVER: YOUR SCORE WAS" + bag.getScore() , "The game is now over!", Alert.OK, null, myClickHandler, null,Alert.OK);
 			}
 		}
 		
