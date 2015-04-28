@@ -8,7 +8,6 @@
   HomeController.$inject = ['$scope', '$rootScope'];
 
   function HomeController($scope, $rootScope) {
-
     
   };
 
