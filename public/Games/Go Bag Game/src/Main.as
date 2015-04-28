@@ -5,11 +5,13 @@
 	import flash.display.Bitmap;
 	import flash.display.Graphics;
 	import flash.display.Sprite;
+	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.display.Graphics;
 	import components.*;
 	import flash.text.TextField;
+	import flash.text.TextFormat;
 	import mx.controls.Alert;
 	
 	
@@ -21,7 +23,7 @@
 		var layer0:Bitmap = new layer0Class() as Bitmap;
 		var item0 = new GoBagItem("Candy","Candy is a yummy treat, but it is not good for nutrition or sustained energy in a crisis.",false,layer0);
 		
-		
+	
 		[Embed(source="../assets/11971038831932190305kelan_whistle.svg.med.png")]
 		private var layer1Class:Class;
 		var layer1:Bitmap = new layer1Class() as Bitmap;
@@ -81,7 +83,7 @@
 		[Embed(source="../assets/wrench.png")]
 		private var layer12Class:Class;
 		var layer12:Bitmap = new layer12Class() as Bitmap;
-		var item12 = new GoBagItem("Wrench","A wrench can be used to turn off the utilities of a house during a tornado.",true,layer0);
+		var item12 = new GoBagItem("Wrench","A wrench can be used to turn off the utilities of a house during a tornado.",true,layer12);
 
 		[Embed(source="../assets/firstaidkit.png")]
 		private var layer13Class:Class;
@@ -130,6 +132,12 @@
 		private var layer20Class:Class;
 		var layer20:Bitmap = new layer20Class() as Bitmap;
 		var bag = new GoBag(layer20, true);
+		
+		[Embed(source = "../assets/button.png")]
+		private var buttonLayerClass:Class;
+		var button:Bitmap = new buttonLayer() as Bitmap;
+		
+		private var box = new Sprite();
 		
 		private var items:Array = new Array(
 			item0,
@@ -189,6 +197,11 @@
 				items[i].x = startPositionsX[i%4];
 				items[i].y = startPositionsY[i%5];
 				items[i].height = 75;
+				if(i == 8)
+				{
+					items[i].height = 125;
+				
+				}
 				items[i].scaleX = items[i].scaleY;
 				items[i].addEventListener(MouseEvent.MOUSE_DOWN, dragObject);
 				items[i].addEventListener(MouseEvent.MOUSE_UP, stopDragObject);
@@ -208,7 +221,7 @@
 			textBox.border = true;
 			textBox.wordWrap = true;
 			textBox.width = (220+stage.width)/4;
-			textBox.height = stage.height;
+			textBox.height = stage.height+100;
 			textBox.x = 600;
 			textBox.y = 0;
 			textBox.background = true;
@@ -222,7 +235,8 @@
 				scale - stage.stageHeight / background.height;
 			}
 			
-			background.scaleX = background.scaleY = scale;
+			background.scaleX = scale;
+			background.scaleY = 2;
 			//[SWF(width="1280", height="1000", backgroundColor="#66000", frameRate="30")]
 			addChildAt(background, 0);
 			addChild(textBox);
@@ -294,10 +308,41 @@
 						trace(Alert.cancelLabel);
 					}
 				};
-			var dialog_obj:Object = new Object();
-			 dialog_obj = Alert.show("GAME OVER: YOUR SCORE WAS " + bag.getScore() , "The game is now over!", Alert.OK, null, myClickHandler, null,Alert.OK);
+			clearChildren(stage);
 			}
 		}
 		
+		public function clearChildren(parent:Stage):void
+		{
+			if ((parent as DisplayObject) == null)
+			{
+				return;
+			}
+			while (parent.numChildren > 0)
+			{
+				parent.removeChildAt(0);
+			}
+			
+			
+			var finalTxt = new TextField();
+			finalTxt.background = true;
+			finalTxt.backgroundColor = 0x0191C8;
+			finalTxt.width = 800;
+			finalTxt.height = 800;
+			finalTxt.textColor = 000000;
+			finalTxt.defaultTextFormat = new TextFormat("Arial", 30);
+			finalTxt.text = "Congratulations you put  " + bag.getScore() + " out of "+ goodItems.length + " correct items in the bag!";
+			parent.addChild(finalTxt);
+			
+			
+			box.addChild(button);
+			
+			parent.addChild(box);
+			box.x = 300;
+			box.y = 300;
+		}
+		
+		
+				
 	}
 }

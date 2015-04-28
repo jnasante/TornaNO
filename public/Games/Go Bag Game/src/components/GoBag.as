@@ -29,7 +29,7 @@
 			
 			if(item.isAccepted){
 					trace("A valid item was dropped");
-					itemsArray.push(item)
+					itemsArray.push(item.itemName);
 			}
 			
 			else{
@@ -39,13 +39,13 @@
 		
 		public function getScore():String{
 			//READ THIS - test for syntax
-			var correct:int = 0;
-			for(var i = 0; i < itemsArray.length; i++){
-				if(itemsArray[i].isAccepted){
-					correct++;
-				}
-			}
-			return correct + "/" + itemsArray.length;
+			//var correct:int = 0;
+			//for(var i = 0; i < itemsArray.length; i++){
+			//	if(itemsArray[i].isAccepted){
+			//		correct++;
+			//	}
+			//}
+			return (String) (itemsArray.length);
 		}
 
 	}

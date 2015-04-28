@@ -20,8 +20,6 @@
 			addChild(imageSprite);
 			imageSprite.addChild(imageMap);
 			
-			addEventListener(MouseEvent.MOUSE_DOWN, dragObject);
-			addEventListener(MouseEvent.MOUSE_UP, releaseObject);
 		}
 	}
 	
