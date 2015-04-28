@@ -83,7 +83,7 @@
 		[Embed(source="../assets/wrench.png")]
 		private var layer12Class:Class;
 		var layer12:Bitmap = new layer12Class() as Bitmap;
-		var item12 = new GoBagItem("Wrench","A wrench can be used to turn off the utilities of a house during a tornado.",true,layer0);
+		var item12 = new GoBagItem("Wrench","A wrench can be used to turn off the utilities of a house during a tornado.",true,layer12);
 
 		[Embed(source="../assets/firstaidkit.png")]
 		private var layer13Class:Class;
@@ -197,6 +197,11 @@
 				items[i].x = startPositionsX[i%4];
 				items[i].y = startPositionsY[i%5];
 				items[i].height = 75;
+				if(i == 8)
+				{
+					items[i].height = 125;
+				
+				}
 				items[i].scaleX = items[i].scaleY;
 				items[i].addEventListener(MouseEvent.MOUSE_DOWN, dragObject);
 				items[i].addEventListener(MouseEvent.MOUSE_UP, stopDragObject);
@@ -212,7 +217,7 @@
 			bag.height = 100;
 			bag.scaleX = bag.scaleY;
 			
-			textBox.text = "GO000000000000O BAGGGGGG GAME";
+			textBox.text = "Welcome to the Go Bag Buidler game! A go bag is a useful tool for emergency preparedness that holds a few handy, necessary items. Whenever there is a tornado, grab your go bag and take it with you. \n\n You can see a bag and a group of items. Drag the items you think are most useful and appropriate and drag them into the bag at the bottom of the screen.";
 			textBox.border = true;
 			textBox.wordWrap = true;
 			textBox.width = (220+stage.width)/4;
