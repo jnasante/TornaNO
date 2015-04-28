@@ -204,7 +204,7 @@
 			bag.height = 100;
 			bag.scaleX = bag.scaleY;
 			
-			textBox.text = "GO000000000000O BAGGGGGG GAME";
+			textBox.text = "Welcome to the Go Bag Buidler game! A go bag is a useful tool for emergency preparedness that holds a few handy, necessary items. Whenever there is a tornado, grab your go bag and take it with you. \n\n You can see a bag and a group of items. Drag the items you think are most useful and appropriate and drag them into the bag at the bottom of the screen.";
 			textBox.border = true;
 			textBox.wordWrap = true;
 			textBox.width = (220+stage.width)/4;
