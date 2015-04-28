@@ -202,10 +202,10 @@
 				items[i].x = startPositionsX[i%4];
 				items[i].y = startPositionsY[i%5];
 				items[i].height = 75;
-				if(i == 8)
+				if(i == 7)
 				{
-					items[i].height = 125;
-				
+			
+					items[i].width = 50
 				}
 				items[i].scaleX = items[i].scaleY;
 				items[i].addEventListener(MouseEvent.MOUSE_DOWN, dragObject);
