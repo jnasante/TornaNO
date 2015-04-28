@@ -1,0 +1,30 @@
+<!doctype>
+<html ng-app>
+	<head>
+		<title>Tornado Dress-Up</title>
+
+	</head>
+
+	<body>
+		<div class="container" align="center">
+			<p class="text-success">
+				<font size="20" style="bold">
+					Tornado Dress-Me-Up
+				</font>
+			</p>
+			<p class="text-muted"><b>Dress in your most tornado appropriate clothes! And remember kids, <em>PUT ON THAT HELMET!</em></b></p>
+		</div>
+		<div class="container" align="center">
+			<object width="650" height="500"> 
+<<<<<<< HEAD
+				<param name="movie" value="games/TornadoDressUp.swf"> 
+				<embed src="games/TornadoDressUp.swf" width="650" height="500"> 
+=======
+				<param name="movie" value="Games/TornadoDressUp.swf"> 
+				<embed src="Games/TornadoDressUp.swf" width="650" height="500"> 
+>>>>>>> aac2d6a9c53fa1b88e5e986172b35089f8e9943f
+				</embed> 
+			</object> 
+		</div>
+	</body>
+</html>
