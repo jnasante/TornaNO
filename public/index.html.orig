@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tornano">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TornaNO</title>
+    <base href="/">
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+  </head>
+  <body ng-controller="appController">
+    
+    <!-- navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <ul class="nav navbar-nav">
+            <li ui-sref-active="active"><a class="navbar-brand" ui-sref='home'>TornaNO!</a></li>
+          </ul>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<<<<<<< HEAD
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Hi, Kid<span class="caret"></span></a>
+=======
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Hi, {{username}}<span class="caret"></span></a>
+>>>>>>> 325d241738b92d074dc2ca27aa6889fdf72b3480
+              <ul class="dropdown-menu" role="menu">
+                <div class="input-group">
+                <input type="text" ng-model="username" class="form-control" placeholder="Change Name">
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div ui-view></div>
+    </div>
+
+    <!-- footer -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js/lib/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/lib/bootstrap.min.js"></script>
+
+    <!-- angular and 3rd party libraries -->
+
+    <script src="/js/lib/angular.min.js"></script>
+    <script src="/js/lib/angular-resource.min.js"></script>
+    <script src="/js/lib/angular-ui-router.min.js"></script>
+
+    <!-- application submodules -->
+
+    <script src="/js/app/users/users.module.js"></script>
+    <script src="/js/app/users/users.routes.js"></script>
+
+    <!-- application modules -->
+
+    <script src="/js/app/app.module.js"></script>
+    <script src="/js/app/home.controller.js"></script>
+    <script src="/js/app/dress.controller.js"></script>
+    <script src="/js/app/builder.controller.js"></script>
+    <script src="/js/app/shelter.controller.js"></script>
+    <script src="/js/app/puzzle.controller.js"></script>
+    <script src="/js/app/users/User.factory.js"></script>
+    <script src="/js/app/users/Auth-events.constant.js"></script>
+    <script src="/js/app/users/Auth.factory.js"></script>
+    <script src="/js/app/users/Session.service.js"></script>
+    <script src="/js/app/users/login.controller.js"></script>
+    <script src="/js/app/users/signup.controller.js"></script>
+    <script src="/js/app/users/logout.controller.js"></script>
+    <script src="/js/app/app.controller.js"></script>
+    <script src="/js/app/app.routes.js"></script>
+
+
+
+  </body>
+</html>
